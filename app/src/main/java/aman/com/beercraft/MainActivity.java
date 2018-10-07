@@ -76,14 +76,16 @@ public class MainActivity extends AppCompatActivity {
             public void OnClickAddToCartClick(Beer beer) {
                 shoppinCartList.add(beer);
                 tv_cart.setText(shoppinCartList.size()+"");
-                Toast.makeText(MainActivity.this, "Added to cart", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Added to cart", Toast.LENGTH_LONG).show();
             }
         });
 
         img_shoppingCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,ShoppinCart.class));
+                Intent intent = new Intent(MainActivity.this,ShoppinCart.class);
+                startActivity(intent);
+                
             }
         });
         recyclerView.setAdapter(adapter);
